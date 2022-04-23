@@ -16,9 +16,11 @@ namespace GiygasV1
             //intro sequence will require password not too terminate and continue
 
             beginSeq();
-            iniLoadGraphics();
+            iniLoadGraphics2();
             iniProtocolInquisition();
             choice();
+            talkProgram();
+
 
             //end of ini protocol will inquire a protocol string
 
@@ -38,10 +40,22 @@ namespace GiygasV1
             {
                 macro1();
             }
+            if (protocolChoice == "talk")
+            {
+                talkProgram();
+            }
+
+            if (protocolChoice ==  "waddup");
+
+
+
+
             else
             {
                 Console.WriteLine("Unknown Protocol Command resetting protocol inquisition");
                 iniProtocolInquisition();
+
+
             }
 
 
@@ -173,7 +187,75 @@ namespace GiygasV1
 
         }
 
-        public static void iniLoadGraphics()
+        public static void talkProgram()
+        {
+
+
+            Console.WriteLine("You have initiated Giygas chatbot script V1. WHAT DO YOU WANT NOW?**" +
+                "" +
+
+                "Whats the first sanctuary location?");
+
+            String answer1 = Console.ReadLine();
+
+  
+
+
+
+
+            if (answer1.Contains("giant step") == true)
+            {
+                Console.WriteLine("okay, welcome.");
+
+                Console.WriteLine("Welcome to the archve of philip wells");
+
+                Console.WriteLine("Initiating further giygas protocol, what do you want.");
+
+                entryProto();
+            }
+
+              
+            //D:\Giygas Memory Archive
+            
+            if (answer1.Contains("?") == true)
+                {
+                Console.WriteLine("I am here for a very specific purpose. Please ask the right questions");
+            }
+            
+            if (answer1 == "who are you") 
+            {
+                Console.WriteLine("If you want, I will tell you but your going to have to know me.");
+                talkProgram();
+            }
+
+            if (answer1 == "what should I say")
+            {
+                Console.WriteLine("say what you want");
+                talkProgram();
+            }
+            else
+            {
+                Console.WriteLine("I serve a very specific purpose. please ask the right question or ask the right answer.");
+
+                talkProgram();
+            }
+
+            Console.WriteLine("I serve a very specific purpose for Phil. would you like to see a memory archive?");
+
+            talkProgram();
+
+        }
+
+
+        public static void entryProto()
+        {
+
+            Console.WriteLine("");
+            String entryProtoAnswer = Console.ReadLine();
+        }
+
+
+        public static void iniLoadGraphics2()
         {
 
 
@@ -204,6 +286,7 @@ namespace GiygasV1
             Console.WriteLine("COMPLETE");
 
         }
+
 
 
 
@@ -252,6 +335,8 @@ macro1
 
 Initiate:
 
+Talk
+
 ");
 
 
@@ -273,7 +358,7 @@ Initiate:
                 Console.WriteLine(@"Mood protocol selected running
 
 ");
-                iniLoadGraphics();
+                iniLoadGraphics2();
 
                 Console.WriteLine(@"Todays mood:
 
