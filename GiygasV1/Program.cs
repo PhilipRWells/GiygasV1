@@ -20,55 +20,80 @@ namespace GiygasV1
             iniProtocolInquisition();
             choice();
             talkProgram();
+            programTerm();
 
-
-            //end of ini protocol will inquire a protocol string
-
+            string wantAnswer = Console.ReadLine();
 
             string protocolChoice = Console.ReadLine();
 
-
-            if (protocolChoice == "system properties")
-            {
-                sysProp();
-            }
             if (protocolChoice == "mood")
             {
                 todaysMood();
             }
-            if (protocolChoice == "macro1")
-            {
-                macro1();
-            }
+
             if (protocolChoice == "talk")
             {
                 talkProgram();
             }
 
-            if (protocolChoice ==  "waddup");
-
-
-
-
-            else
+            if (protocolChoice == "Talk")
             {
-                Console.WriteLine("Unknown Protocol Command resetting protocol inquisition");
-                iniProtocolInquisition();
+                talkProgram();
+            }
+
+            if (protocolChoice == "waddup")
+            {
+                talkProgram();
+            }
+
+            if (protocolChoice == "tritoch")
+            {
+                talkProgram();
+            }
+
+            if (protocolChoice == "yetabove")
+            {
+                Console.WriteLine("yetAboveresponseValue return here");
+                talkProgram();
+            }
+
+            if (protocolChoice == "Yetabove")
+            {
+                Console.WriteLine("yetAboveresponseValue return here");
+                talkProgram();
+            }
+            if (protocolChoice == "yet above")
+            {
+                Console.WriteLine("yet above");
+
+                talkProgram();
+
 
 
             }
 
+            else
+            {
+                Console.WriteLine("Unknown terminating AI script");
+                programTerm();
+            }
 
         }
 
-        public static void sysProp()
+        public static void programTerm()
         {
+            Console.Write(@" 
 
-        }
 
-        public static void macro1()
-        {
-            Process.Start("C:\\Games\\Mr Prepper\\mrprepper.exe");
+The run of this program has reached it's end
+
+
+it will now terminate.
+
+");
+
+            System.Environment.Exit(1);
+
         }
 
         public static void todaysMood()
@@ -92,6 +117,18 @@ namespace GiygasV1
 
 
 ");
+
+
+                Console.WriteLine("Hit any key to quit or type again to initiate Giygas protocol choices.");
+
+                string moodEndAnswer = Console.ReadLine();
+
+                if (moodEndAnswer == "again")
+                {
+                    choice();
+                }
+
+                programTerm();
             }
 
             if (date % 7 == 2)
@@ -104,6 +141,19 @@ namespace GiygasV1
 |   |  |  | \  ___/\  ___/|  |__  \___ \  / __ \_/ /_/ |            
 |___|  |__|  \___  >\___  >____/ /____  >(____  /\____ | /\  /\  /\ 
                  \/     \/            \/      \/      \/ \/  \/  \/ ");
+
+
+
+                Console.WriteLine("Hit any key to quit or type again to initiate Giygas protocol choices.");
+
+                string moodEndAnswer = Console.ReadLine();
+
+                if (moodEndAnswer == "again")
+                {
+                    choice();
+                }
+
+                programTerm();
             }
 
             if (date % 7 == 3)
@@ -129,15 +179,25 @@ namespace GiygasV1
  \/   \ \  |___|  \___  / \___  >\___  >____/ /\  /\   \______  /\_______  /\____/_______  /
      _/_/             \/      \/     \/       \/  \/          \/         \/              \/ 
 ");
-            }
 
+                Console.WriteLine("Hit any key to quit or type again to initiate Giygas protocol choices.");
+
+                string moodEndAnswer = Console.ReadLine();
+
+                if (moodEndAnswer == "again")
+                {
+                    choice();
+                }
+
+                programTerm();
+
+            }
 
         }
 
-
         public static void beginSeq()
         {
-            
+
 
             Console.WriteLine("Hello Philip, Giygas initiation succesfull.");
 
@@ -173,6 +233,7 @@ namespace GiygasV1
 
 
             if (enteredPw == "Hello Ness")
+            // Hello Ness
             {
                 Console.WriteLine("*****ACCESS GRANTED CONTINUING PROGRAM*****");
 
@@ -189,71 +250,155 @@ namespace GiygasV1
 
         public static void talkProgram()
         {
-
-
-            Console.WriteLine("You have initiated Giygas chatbot script V1. WHAT DO YOU WANT NOW?**" +
-                "" +
-
-                "Whats the first sanctuary location?");
-
-            String answer1 = Console.ReadLine();
-
-  
-
-
-
-
-            if (answer1.Contains("giant step") == true)
-            {
-                Console.WriteLine("okay, welcome.");
-
-                Console.WriteLine("Welcome to the archve of philip wells");
-
-                Console.WriteLine("Initiating further giygas protocol, what do you want.");
-
-                entryProto();
-            }
-
-              
-            //D:\Giygas Memory Archive
             
-            if (answer1.Contains("?") == true)
-                {
-                Console.WriteLine("I am here for a very specific purpose. Please ask the right questions");
-            }
-            
-            if (answer1 == "who are you") 
+
+            int responseLevel = 0;
+
+            Console.WriteLine(@"
+
+Giygas chatbot script V1.1 loaded.
+
+
+            ____________________________ 
+
+
+Ok, talk to me goose. 
+
+
+");
+
+            string answer1 = Console.ReadLine();
+            String answer1L = answer1.ToLower();
+
+            if (answer1L == "ok")
             {
-                Console.WriteLine("If you want, I will tell you but your going to have to know me.");
-                talkProgram();
+                Console.WriteLine("ok");
+
+                responseLevel = responseLevel = responseLevel + 1;
+
+                Console.WriteLine(responseLevel);
             }
 
-            if (answer1 == "what should I say")
+            if (answer1L == answer1)
             {
-                Console.WriteLine("say what you want");
-                talkProgram();
+                Console.WriteLine(answer1 + "?");
+
             }
+
+            if (answer1L == "why")
+            {
+                Console.WriteLine("You'd know");
+
+                responseLevel = responseLevel = responseLevel + 1;
+
+                Console.WriteLine(responseLevel);
+            }
+
+
+            if (answer1L == "k")
+            {
+                Console.WriteLine("k what?");
+            }
+            if (answer1L == "hello")
+            {
+                Console.WriteLine("Hello to you");
+            }
+
+            if (answer1L == "who are you")
+            {
+                Console.WriteLine("I'm Giygas");
+            }
+
+            if (answer1L == "?")
+            {
+                Console.WriteLine("? is a character useless in this conversation.");
+            }
+
+            if (answer1L == "hello giygas")
+            {
+                Console.WriteLine("Hello user");
+            }
+
+            if (answer1L == "who are you")
+            {
+                Console.WriteLine("I'm Giygas");
+            }
+
+            if (answer1L == "Are you a robot?")
+            {
+                Console.WriteLine("I am a robot mirrored of my scriptor Philip");
+            }
+
+            if (answer1L == "How are you?")
+            {
+                todaysMood();
+            }
+
+            if (answer1L == "How are you doing?")
+            {
+                todaysMood();
+            }
+
+            if (answer1L == "whats up with you?")
+            {
+                todaysMood();
+            }
+
+            if (answer1L == "whats going on")
+            {
+                todaysMood();
+            }
+
             else
             {
-                Console.WriteLine("I serve a very specific purpose. please ask the right question or ask the right answer.");
+                Console.WriteLine("limit reached in talk, resetting tProgram");
 
                 talkProgram();
+
             }
 
-            Console.WriteLine("I serve a very specific purpose for Phil. would you like to see a memory archive?");
 
-            talkProgram();
 
         }
 
 
+   
+        public static void talkProgram2()
+        {
+
+        }
+
+        //below is the begining to memory archive
         public static void entryProto()
         {
 
-            Console.WriteLine("");
+            Console.WriteLine("entry protocol is initiated");
+            Console.WriteLine("There are a few options, pick a year from.. 20 ");
+            Console.WriteLine("2015 and beyond, or a back up");
             String entryProtoAnswer = Console.ReadLine();
-        }
 
+            if (entryProtoAnswer.Contains("2016") == true)
+            {
+                Process.Start(@"D:\\Giygas Memory Archive\\DCIM 01262016");
+
+            }
+
+            if (entryProtoAnswer.Contains("2017") == true)
+            {
+                Process.Start(@"D:\\Giygas Memory Archive\\DCIM 01262016");
+
+                //D:\Giygas Memory Archive\early 2016
+            }
+
+            else
+            {
+                Console.WriteLine("unknown year or answer, try again");
+
+                entryProto();
+
+            }
+
+        }
 
         public static void iniLoadGraphics2()
         {
@@ -283,12 +428,14 @@ namespace GiygasV1
             {
                 Console.WriteLine(@"|----------------- |");
             }
-            Console.WriteLine("COMPLETE");
+            Console.WriteLine(@"
 
+COMPLETE
+
+
+
+");
         }
-
-
-
 
         public static void iniProtocolInquisition()
         {
@@ -353,7 +500,7 @@ Talk
 
 
 
-            if(choicePick == "mood")
+            if (choicePick == "mood")
             {
                 Console.WriteLine(@"Mood protocol selected running
 
@@ -367,7 +514,7 @@ Talk
                 todaysMood();
             }
 
-           
+
         }
     }
 
